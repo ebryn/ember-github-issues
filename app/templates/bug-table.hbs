@@ -1,6 +1,6 @@
 <table>
   <thead>
-    <tr><th>ID</th><th>Title</th><th>State</th><th>Reporter</th><th>Assignee</th><th>Status</th></tr>
+    <tr><th>ID</th><th>Title</th><th>State</th><th>Reporter</th><th>Assignee</th><th>Status</th><th>Flags</th></tr>
   </thead>
   <tbody>
     {{#each}}
@@ -11,6 +11,11 @@
         <td>{{user.login}}</td>
         <td>{{assignee}}</td>
         <td>{{customStatus}}</td>
+        <td>
+          {{#each flags}}
+            <p>{{name}}: {{requestee}}</p>
+          {{/each}}
+        </td>
       </tr>
     {{/each}}
   </tbody>
