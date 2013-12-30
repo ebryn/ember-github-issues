@@ -886,7 +886,7 @@ function emojify(html) {
 
   for (var i = 1; i < matches; i++) {
     foundEmoji = EMOJI_LOOKUP[possibleEmojis[i]];
-    if (foundEmoji) { html = html.replace(":%@:".fmt(foundEmoji), '<img width=20 src="/assets/emoji/%@.png">'.fmt(foundEmoji)); }
+    if (foundEmoji) { html = html.replace(":%@:".fmt(foundEmoji), '<img width=20 src="assets/emoji/%@1.png" title=":%@1:">'.fmt(foundEmoji)); }
   }
 
   return html;
