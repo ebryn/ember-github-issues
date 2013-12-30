@@ -45,6 +45,7 @@ export default Ember.Object.extend({
         });
 
     return Ember.RSVP.hash({firebase: firebasePromise, github: githubPromise}).then(function(values) {
+      values.github.id = values.github.number; // ignore GH id
       self.setProperties(camelizeKeys(values.github));
       return self;
     });
