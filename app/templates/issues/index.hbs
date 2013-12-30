@@ -29,7 +29,7 @@
   {{#if isPullRequest}}
     {{#each files}}
       <p>{{filename}}</p>
-      <pre>{{patch}}</pre>
+      {{highlighted-code source=patch}}
       <hr>
     {{/each}}
   {{/if}}
