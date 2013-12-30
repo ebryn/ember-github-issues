@@ -41,14 +41,21 @@ export default Ember.Object.extend({
           flags: this.get('flags').slice() // FIXME: _super is getting set on the array, causes issue with FB
         }),
         githubPromise = gh.patch("repos/emberjs/ember.js/issues/" + id, {
-          assignee: this.get('assignee.login')
+          assignee: this.get('assignee')
         });
 
     return Ember.RSVP.hash({firebase: firebasePromise, github: githubPromise}).then(function(values) {
-      values.github.id = values.github.number; // ignore GH id
-      self.setProperties(camelizeKeys(values.github));
-      return self;
+      return self.updateFromJSON(values.github);
     });
+  },
+
+  updateFromJSON: function(json) {
+    json = camelizeKeys(json);
+
+    json.id = json.number; // ignore GH id
+    json.assignee = json.assignee && json.assignee.login;
+
+    return this;
   }
 }).reopenClass({
   fromJSON: function(json) {
