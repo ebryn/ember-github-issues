@@ -7,7 +7,12 @@
     "Ember",
     "Em",
     "DS",
-    "$"
+    "$",
+    "Firebase",
+    "localStorage",
+    "Handlebars",
+    "markdown",
+    "ic"
   ],
   "node" : false,
   "browser" : false,

@@ -1,8 +1,21 @@
 /* Put your CSS here */
 html, body {
-    margin: 20px;
+    margin: 10px;
+    font-family: sans-serif;
 }
 
-@keyframes domChanged { from { background: yellow; } }
-@-webkit-keyframes domChanged { from { background: yellow; } }
-.ember-view { animation: domChanged 1s; -webkit-animation: domChanged 1s; }
+* {
+  border-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+}
+
+.active {
+  background-color: #ccc;
+}

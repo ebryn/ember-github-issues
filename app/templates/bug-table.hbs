@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr><th>ID</th><th>Title</th><th>State</th><th>Reporter</th><th>Assignee</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    {{#each}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{link-to title "issues" this}}</td>
+        <td>{{state}}</td>
+        <td>{{user.login}}</td>
+        <td>{{assignee}}</td>
+        <td>{{customStatus}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

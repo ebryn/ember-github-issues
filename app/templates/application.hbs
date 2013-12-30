@@ -1,3 +1,8 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<p>
+  {{link-to "All issues" "index"}}
+  {{link-to "New issues" "newIssues"}}
+  {{link-to "My issues" "myIssues"}}
+  <a href="#" {{action "logout"}}>Logout</a>
+</p>
 
 {{outlet}}

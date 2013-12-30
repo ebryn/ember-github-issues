@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="/assets/app.css">
   <!-- endbuild -->
 
+  <script type='text/javascript' src='//cdn.firebase.com/v0/firebase.js'></script>
+  <script type='text/javascript'
+          src='//cdn.firebase.com/v0/firebase-simple-login.js'>
+  </script>
+
   <!-- for more details visit: https://github.com/yeoman/grunt-usemin -->
 
   <!-- build:js(tmp/result) assets/config.min.js -->
@@ -42,10 +47,12 @@
     <script src="/vendor/ember/ember.prod.js"></script>
     <!-- @endif -->
 
-    <script src="/vendor/ember-data/ember-data.js"></script>
     <script src="/vendor/loader.js"></script>
     <script src="/vendor/ember-resolver/dist/ember-resolver.js"></script>
     <script src="/vendor/ic-ajax/main.js"></script>
+    <script src="/vendor/ember-model-latest.js"></script>
+    <script src="/vendor/ember-model-firebase-adapter.js"></script>
+    <script src="/vendor/markdown.js"></script>
 
   <!-- endbuild -->
 

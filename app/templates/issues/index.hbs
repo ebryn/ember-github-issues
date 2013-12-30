@@ -1,0 +1,60 @@
+<section style="width: 70%; float: left; padding-right: 10px; border-right: 1px solid black;">
+  <h1>{{number}}: {{title}}</h1>
+
+  <p>State: {{state}}, Labels: {{labelsText}}</p>
+
+  <p>
+    Assignee:
+    {{#if assignees.isLoaded}}
+      {{view Ember.Select content=assignees optionLabelPath="content.login" optionValuePath="content.login" value=assignee prompt="unassigned"}}
+    {{/if}}
+  </p>
+
+  <hr>
+
+  <p style="white-space: pre-wrap">{{format-markdown body}}</p>
+
+  {{#each commentModels}}
+    <hr>
+    <p>{{user.login}} commented at {{createdAt}}</p>
+    <p style="white-space: pre-wrap">{{format-markdown body}}</p>
+  {{/each}}
+
+  <hr>
+
+  {{textarea value=newCommentText rows=10 cols=80}}
+  <br>
+  <button {{action "saveComment"}}>Submit</button>
+
+  {{#if isPullRequest}}
+    {{#each files}}
+      <p>{{filename}}</p>
+      <pre>{{patch}}</pre>
+      <hr>
+    {{/each}}
+  {{/if}}
+</section>
+
+<section style="width: 28%; float: left; padding-left: 10px;">
+  <form>
+    <h3>Custom issue fields:</h3>
+
+    <p>Status: {{input type="text" value=customStatus}}</p>
+    <p>
+      Flags:
+
+      {{#each flags}}
+        <p>{{name}} {{requestee}} <button {{action "removeFlag" this}}>x</button></p>
+      {{/each}}
+
+      <p>
+        {{input type="text" value=newFlagName}}
+        {{input type="text" value=newFlagRequestee}}
+        <button {{action "saveFlag"}}>Add</button>
+      </p>
+    </p>
+
+    <button {{action "save"}}>Save</button>
+
+  </form>
+</section>
