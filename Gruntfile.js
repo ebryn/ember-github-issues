@@ -235,5 +235,9 @@ module.exports = function(grunt) {
     grunt.file.mkdir('tmp/result');
   });
 
+  grunt.registerTask('deploy', "Generate assets with build:dist and deploy to S3.", [
+                     'build:dist',
+                     's3' ]);
+
   grunt.initConfig(config);
 };
