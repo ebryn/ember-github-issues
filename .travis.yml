@@ -1,9 +1,16 @@
+---
 language: node_js
 node_js:
-  - 0.10
+- 0.1
 before_script:
-  - npm install -g grunt-cli
-  - npm install -g bower
-  - bower install
+- npm install -g grunt-cli
+- npm install -g bower
+- bower install
 after_success:
-  - grunt deploy
+- grunt deploy
+env:
+  global:
+  - secure: G3lLQAkBO6/h1s2yvjR6GkduQw81kpNPfOob3TVxeCk+gN6FqVj1LXXCTSUW4nyFganDKccX929ljN7Rgkz16smGPz5GtPJyJlh2wiuqCwgABINfSmDGs/BgXcCkxOhmc/gctkhgLKzRveETR58r8PYR2lj6iWn1oxshosVLHJE=
+  - secure: r69FT3nPZvLbF0iB6fmwJjuubgG6/tpwJXJmcyCA2pRpC4M0/YAUwhG93shH0n4vfrBkNB8/c8U/hiSNkfaT4EKU86OSnpG08yNueEEBYRAwiR4SYNneBtMHLRt616tReSu7XXpv4So2p43KizL34HYexNgPSymWTklrA4VLsMc=
+  - secure: VDaURjd7QITl9nIRGrfnQ7zf3cf6qfRQc3BC/yiAm80VS39FYtQ+8DB59h8MXSY0FSEUFgeyFJfahx/P4CM6vwxPAa+S3/CgOvxIopket1JzitQlMmbINsI4NpjPJFh4yJjpVIYH9z6bCvI19ZhF21HjK6hIwCl1xOloxlYH1vI=
+  - secure: drkt0OrNsZ17kh4LSw6ZDPog65t0Cp9dONbC8yxwIkd3FbxaNG72UMcwetpKfs3y5uF7BWLKhvcU+W/sYt3l9V/deBTNrvMbYAJnS6lD2oZzfnCjDeJcbvh3nIiBiKyqiX3hWyy2ALBRXTf5iQpwjKNK3sO+3uGsHfJcEu1QqRc=

@@ -17,6 +17,7 @@ module.exports = {
           // make sure this document is newer than the one on S3 and replace it
           src: 'dist/**/*',
           rel: 'dist/',
+          dest: 'ember-github-issues/'
         },
       ]
     }
