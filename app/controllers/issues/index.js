@@ -9,6 +9,10 @@ export default Ember.ObjectController.extend(BufferedProxy, {
     return Assignee.findAll();
   }.property(),
 
+  flagNames: function() {
+    return ['review', 'needsinfo'];
+  }.property(),
+
   labelsText: function() {
     var labels = this.get('labels').mapProperty('name');
     return labels.join(", ");

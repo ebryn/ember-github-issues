@@ -36,25 +36,22 @@
 </section>
 
 <section style="width: 28%; float: left; padding-left: 10px;">
-  <form>
-    <h3>Custom issue fields:</h3>
+  <h3>Custom issue fields:</h3>
 
-    <p>Status: {{input type="text" value=customStatus}}</p>
+  <p>Status: {{input type="text" value=customStatus}}</p>
+  <p>
+    Flags:
+
+    {{#each flags}}
+      <p>{{name}} {{requestee}} <button {{action "removeFlag" this}}>x</button></p>
+    {{/each}}
+
     <p>
-      Flags:
-
-      {{#each flags}}
-        <p>{{name}} {{requestee}} <button {{action "removeFlag" this}}>x</button></p>
-      {{/each}}
-
-      <p>
-        {{input type="text" value=newFlagName}}
-        {{input type="text" value=newFlagRequestee}}
-        <button {{action "saveFlag"}}>Add</button>
-      </p>
+      {{view Ember.Select prompt="[flag]" selection=newFlagName content=flagNames}}
+      {{input type="text" value=newFlagRequestee placeholder="github user"}}
+      <button {{action "saveFlag"}}>Add</button>
     </p>
+  </p>
 
-    <button {{action "save"}}>Save</button>
-
-  </form>
+  <button {{action "save"}}>Save</button>
 </section>
